@@ -11,6 +11,6 @@ package com.m.ibrahimhanif;
 public class App {
 
     public static void main(String[] args) {
-        System.out.println("Tes!");
+        System.out.println("Tester");
     }
 }
