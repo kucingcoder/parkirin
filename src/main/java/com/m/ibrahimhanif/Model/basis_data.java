@@ -7,10 +7,12 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class basis_data {
-    private final String host, database, username, password;
+    private String host, database, username, password;
     private Connection conn;
     private Statement stmt;
     private ResultSet rs;
+    
+    public basis_data(){}
     
     public basis_data(String host_anda, String database_anda, String username_anda, String password_anda){
         host = host_anda;
