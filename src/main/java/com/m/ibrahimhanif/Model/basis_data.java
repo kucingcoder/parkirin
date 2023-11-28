@@ -44,7 +44,6 @@ public class basis_data {
     
     public void SetData (String Query) throws Exception {
         try {
-            rs.close();
             stmt.close();
         } catch (SQLException e) {}
         

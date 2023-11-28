@@ -14,7 +14,6 @@ public class pengaturan {
     private ArrayList<jenis_kendaraan> tipe = new ArrayList<>();
     
     public pengaturan(){
-        PengaturanDimuat = false;
         try {
             String isi = new String(Files.readAllBytes(Paths.get("pengaturan.json")));
             JSONObject file_pengaturan = new JSONObject(isi);
@@ -36,6 +35,7 @@ public class pengaturan {
             
             PengaturanDimuat = true;
         } catch (Exception e) {
+            PengaturanDimuat = false;
             System.out.println(e.getMessage());
         }
     }
