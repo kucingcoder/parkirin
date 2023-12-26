@@ -30,6 +30,12 @@ public class main extends javax.swing.JFrame {
         konten.add(kerja);
         kerja.setVisible(true);
     }
+    
+    public static void keluar(){
+        autentikasi kerja = new autentikasi();
+        konten.add(kerja);
+        kerja.setVisible(true);
+    }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
