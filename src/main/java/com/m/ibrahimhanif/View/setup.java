@@ -1,4 +1,5 @@
 package com.m.ibrahimhanif.View;
+import com.m.ibrahimhanif.Controller.data_adapter;
 import com.m.ibrahimhanif.Model.pengaturan;
 import java.beans.PropertyVetoException;
 import javax.swing.JOptionPane;
@@ -241,7 +242,7 @@ public class setup extends javax.swing.JInternalFrame {
 
         try {
             pengaturan.simpan(penyedia.getText(), alamat.getText(), gedung.getText(), perhatian.getText(), server.getText(), port.getText(), db.getText(), user.getText(), pass.getText());
-            main.setingan = new pengaturan();
+            data_adapter.MuatPengaturan();
             JOptionPane.showMessageDialog(this, "Berhasil Menyimpan Pengaturan", "Sukses", JOptionPane.INFORMATION_MESSAGE);
             this.dispose();
         } catch (Exception e) {
