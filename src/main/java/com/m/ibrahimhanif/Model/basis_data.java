@@ -3,14 +3,11 @@ package com.m.ibrahimhanif.Model;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Statement;
 
 public class basis_data {
     private String host, database, username, password;
     private Connection conn;
-    private Statement stmt;
-    private ResultSet rs;
     
     public basis_data(){}
     
@@ -31,10 +28,8 @@ public class basis_data {
     }
     
     public ResultSet AmbilData (String query) throws Exception{
-        try {
-            rs.close();
-            stmt.close();
-        } catch (SQLException e) {}
+        Statement stmt;
+        ResultSet rs;
         
         stmt = conn.createStatement();
         rs = stmt.executeQuery(query);
@@ -43,16 +38,17 @@ public class basis_data {
     }
     
     public void SetData (String Query) throws Exception {
-        try {
-            stmt.close();
-        } catch (SQLException e) {}
-        
+        Statement stmt;
         stmt = conn.createStatement();
         stmt.executeUpdate(Query);
     }
     
     public boolean Terkonfigurasi(){
-        return !(host.isEmpty() || database.isEmpty() || username.isEmpty() || password.isEmpty());
+        try {
+            return !(conn.isClosed());
+        } catch (Exception e) {
+            return false;
+        }
     }
     
     public Connection Hubungan(){
