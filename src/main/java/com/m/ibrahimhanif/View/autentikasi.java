@@ -1,4 +1,5 @@
 package com.m.ibrahimhanif.View;
+import com.formdev.flatlaf.FlatClientProperties;
 import com.m.ibrahimhanif.Controller.data_adapter;
 import java.beans.PropertyVetoException;
 import javax.swing.JOptionPane;
@@ -11,6 +12,7 @@ public class autentikasi extends javax.swing.JInternalFrame {
             this.setMaximum(true);
             BasicInternalFrameUI bi = (BasicInternalFrameUI)this.getUI();
             bi.setNorthPane(null);
+            sandi.putClientProperty( FlatClientProperties.STYLE, "showRevealButton: true" );
             jButton2.putClientProperty( "JButton.buttonType", "roundRect" );
         } catch (PropertyVetoException e) {}
     }
