@@ -1,43 +1,50 @@
 package com.m.ibrahimhanif.Model;
 
+import java.io.FileWriter;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.sql.Connection;
-import java.util.ArrayList;
-import org.json.JSONArray;
 import org.json.JSONObject;
 
 public class pengaturan {
-    private boolean PengaturanDimuat;
-    private String nama_penyedia, alamat, nama_gedung, perhatian;
-    private basis_data database;
-    private ArrayList<jenis_kendaraan> tipe = new ArrayList<>();
+    private final boolean PengaturanDimuat;
+    private final String nama_penyedia;
+    private final String alamat;
+    private final String nama_gedung;
+    private final String perhatian;
+    private final basis_data database;
     
-    public pengaturan(){
-        try {
-            String isi = new String(Files.readAllBytes(Paths.get("pengaturan.json")));
-            JSONObject file_pengaturan = new JSONObject(isi);
-            
-            nama_penyedia = file_pengaturan.getString("nama");
-            alamat = file_pengaturan.getString("alamat");
-            nama_gedung = file_pengaturan.getString("gedung");
-            perhatian = file_pengaturan.getString("perhatin");
-            
-            database = new basis_data(file_pengaturan.getString("host"), file_pengaturan.getString("database"), file_pengaturan.getString("username"), file_pengaturan.getString("password"));
-            database.Hubungkan();
-            
-            JSONArray daftar_tipe = file_pengaturan.getJSONArray("tipe");
-            for (int i = 0; i < daftar_tipe.length(); i++) {
-                JSONObject objek_sementara = daftar_tipe.getJSONObject(i);
-                jenis_kendaraan jenis_sementara = new jenis_kendaraan(objek_sementara.getString("jenis"), objek_sementara.getInt("biaya"));
-                tipe.add(jenis_sementara);
-            }
-            
-            PengaturanDimuat = true;
-        } catch (Exception e) {
-            PengaturanDimuat = false;
-            System.out.println(e.getMessage());
-        }
+    public pengaturan() throws Exception{
+        String isi = new String(Files.readAllBytes(Paths.get("pengaturan.json")));
+        JSONObject file_pengaturan = new JSONObject(isi);
+
+        nama_penyedia = file_pengaturan.getString("nama");
+        alamat = file_pengaturan.getString("alamat");
+        nama_gedung = file_pengaturan.getString("gedung");
+        perhatian = file_pengaturan.getString("perhatian");
+
+        database = new basis_data(file_pengaturan.getString("host"), file_pengaturan.getString("database"), file_pengaturan.getString("username"), file_pengaturan.getString("password"));
+        database.Hubungkan();
+
+        PengaturanDimuat = true;
+    }
+    
+    public static void simpan(String inf_nama, String inf_alamat, String inf_gedung, String inf_perhatian, String db_host, String db_port, String db_name, String db_user, String db_pass) throws Exception{
+        JSONObject setingan = new JSONObject();
+        
+        setingan.put("nama", inf_nama);
+        setingan.put("alamat", inf_alamat);
+        setingan.put("gedung", inf_gedung);
+        setingan.put("perhatian", inf_perhatian);
+        setingan.put("host", db_host);
+        setingan.put("port", db_port);
+        setingan.put("database", db_name);
+        setingan.put("username", db_user);
+        setingan.put("password", db_pass);
+        
+        FileWriter fileWriter = new FileWriter("pengaturan.json");
+        fileWriter.write(setingan.toString(2));
+        fileWriter.flush(); 
     }
     
     public String getNamaPenyedia(){
@@ -58,12 +65,6 @@ public class pengaturan {
     
     public Connection getKoneksiDatabase(){
         return database.Hubungan();
-    }
-    
-    public jenis_kendaraan[] getTipe(){
-        jenis_kendaraan[] array = new jenis_kendaraan[tipe.size()];
-        tipe.toArray(array);
-        return array;
     }
     
     public boolean MemilikiPengaturan(){
