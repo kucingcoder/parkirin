@@ -143,6 +143,7 @@ public class autentikasi extends javax.swing.JInternalFrame {
 
         jPanel2.setBackground(new java.awt.Color(253, 255, 252));
 
+        jLabel1.setBackground(new java.awt.Color(253, 255, 252));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/ilustrasi.png"))); // NOI18N
         jLabel1.setMaximumSize(new java.awt.Dimension(444, 0));

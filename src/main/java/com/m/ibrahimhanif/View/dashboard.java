@@ -27,6 +27,7 @@ public class dashboard extends javax.swing.JInternalFrame {
             menu.add(pegawai);
             menu.add(pengaturan);
             menu.add(keluar);
+            
             analisis.setSelected(true);
         } catch (PropertyVetoException e) {}
     }
@@ -50,12 +51,14 @@ public class dashboard extends javax.swing.JInternalFrame {
 
         setBackground(new java.awt.Color(254, 246, 235));
         setBorder(null);
+        setAlignmentX(0.0F);
+        setAlignmentY(0.0F);
         setMinimumSize(new java.awt.Dimension(880, 600));
         setPreferredSize(new java.awt.Dimension(900, 600));
 
-        navbar.setBackground(new java.awt.Color(253, 255, 252));
+        navbar.setBackground(new java.awt.Color(241, 250, 238));
 
-        jPanel2.setBackground(new java.awt.Color(253, 255, 252));
+        jPanel2.setBackground(new java.awt.Color(241, 250, 238));
         jPanel2.setMinimumSize(new java.awt.Dimension(200, 200));
         jPanel2.setLayout(new java.awt.GridBagLayout());
 
@@ -65,10 +68,10 @@ public class dashboard extends javax.swing.JInternalFrame {
         jLabel2.setText("PARKIRIN");
         jPanel2.add(jLabel2, new java.awt.GridBagConstraints());
 
-        jPanel1.setBackground(new java.awt.Color(253, 255, 252));
+        jPanel1.setBackground(new java.awt.Color(241, 250, 238));
         jPanel1.setLayout(new java.awt.GridLayout(6, 1, 0, 15));
 
-        analisis.setBackground(new java.awt.Color(253, 255, 252));
+        analisis.setBackground(new java.awt.Color(241, 250, 238));
         analisis.setFont(new java.awt.Font("Poppins Medium", 0, 14)); // NOI18N
         analisis.setForeground(new java.awt.Color(241, 136, 5));
         analisis.setText("Analisis");
@@ -80,7 +83,7 @@ public class dashboard extends javax.swing.JInternalFrame {
         });
         jPanel1.add(analisis);
 
-        kendaraan.setBackground(new java.awt.Color(253, 255, 252));
+        kendaraan.setBackground(new java.awt.Color(241, 250, 238));
         kendaraan.setFont(new java.awt.Font("Poppins Medium", 0, 14)); // NOI18N
         kendaraan.setForeground(new java.awt.Color(241, 136, 5));
         kendaraan.setText("Kelola Kendaraan");
@@ -92,7 +95,7 @@ public class dashboard extends javax.swing.JInternalFrame {
         });
         jPanel1.add(kendaraan);
 
-        tarif.setBackground(new java.awt.Color(253, 255, 252));
+        tarif.setBackground(new java.awt.Color(241, 250, 238));
         tarif.setFont(new java.awt.Font("Poppins Medium", 0, 14)); // NOI18N
         tarif.setForeground(new java.awt.Color(241, 136, 5));
         tarif.setText("Tetapkan Tarif");
@@ -104,11 +107,11 @@ public class dashboard extends javax.swing.JInternalFrame {
         });
         jPanel1.add(tarif);
 
-        pegawai.setBackground(new java.awt.Color(253, 255, 252));
+        pegawai.setBackground(new java.awt.Color(241, 250, 238));
         pegawai.setFont(new java.awt.Font("Poppins Medium", 0, 14)); // NOI18N
         pegawai.setForeground(new java.awt.Color(241, 136, 5));
-        pegawai.setText("Manajemen Pegawai");
         pegawai.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
+        pegawai.setLabel("Akun Pegawai");
         pegawai.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 pegawaiActionPerformed(evt);
@@ -116,7 +119,7 @@ public class dashboard extends javax.swing.JInternalFrame {
         });
         jPanel1.add(pegawai);
 
-        pengaturan.setBackground(new java.awt.Color(253, 255, 252));
+        pengaturan.setBackground(new java.awt.Color(241, 250, 238));
         pengaturan.setFont(new java.awt.Font("Poppins Medium", 0, 14)); // NOI18N
         pengaturan.setForeground(new java.awt.Color(241, 136, 5));
         pengaturan.setText("Pengaturan");
@@ -128,7 +131,7 @@ public class dashboard extends javax.swing.JInternalFrame {
         });
         jPanel1.add(pengaturan);
 
-        keluar.setBackground(new java.awt.Color(253, 255, 252));
+        keluar.setBackground(new java.awt.Color(241, 250, 238));
         keluar.setFont(new java.awt.Font("Poppins Medium", 0, 14)); // NOI18N
         keluar.setForeground(new java.awt.Color(241, 136, 5));
         keluar.setText("Keluar");
@@ -145,10 +148,10 @@ public class dashboard extends javax.swing.JInternalFrame {
         navbarLayout.setHorizontalGroup(
             navbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-            .addGroup(navbarLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, navbarLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(14, 14, 14))
         );
         navbarLayout.setVerticalGroup(
             navbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -159,7 +162,9 @@ public class dashboard extends javax.swing.JInternalFrame {
                 .addGap(0, 150, Short.MAX_VALUE))
         );
 
-        kerja.setBackground(new java.awt.Color(244, 244, 249));
+        kerja.setBackground(new java.awt.Color(253, 255, 252));
+        kerja.setAlignmentX(0.0F);
+        kerja.setAlignmentY(0.0F);
 
         javax.swing.GroupLayout kerjaLayout = new javax.swing.GroupLayout(kerja);
         kerja.setLayout(kerjaLayout);
@@ -169,7 +174,7 @@ public class dashboard extends javax.swing.JInternalFrame {
         );
         kerjaLayout.setVerticalGroup(
             kerjaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 597, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -192,14 +197,29 @@ public class dashboard extends javax.swing.JInternalFrame {
 
     private void keluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_keluarActionPerformed
         int reply = JOptionPane.showConfirmDialog(this, "Apakah anda yakin keluar dan login kembali", "Keluar Akun", JOptionPane.YES_NO_OPTION);
-        
+
         if (reply == JOptionPane.YES_OPTION) {
             main.keluar();
             data_adapter.akun.uuid = "";
             data_adapter.akun.level = "";
-            this.dispose();   
+            this.dispose();
         }
     }//GEN-LAST:event_keluarActionPerformed
+
+    private void pengaturanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pengaturanActionPerformed
+        pengaturan seting = new pengaturan();
+        kerja.removeAll();
+        kerja.add(seting);
+        seting.setVisible(true);
+    }//GEN-LAST:event_pengaturanActionPerformed
+
+    private void pegawaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pegawaiActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pegawaiActionPerformed
+
+    private void tarifActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tarifActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tarifActionPerformed
 
     private void kendaraanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kendaraanActionPerformed
         // TODO add your handling code here:
@@ -208,21 +228,6 @@ public class dashboard extends javax.swing.JInternalFrame {
     private void analisisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_analisisActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_analisisActionPerformed
-
-    private void tarifActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tarifActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tarifActionPerformed
-
-    private void pegawaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pegawaiActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_pegawaiActionPerformed
-
-    private void pengaturanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pengaturanActionPerformed
-        pengaturan seting = new pengaturan();
-        kerja.removeAll();
-        kerja.add(seting);
-        seting.setVisible(true);
-    }//GEN-LAST:event_pengaturanActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton analisis;
