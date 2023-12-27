@@ -55,7 +55,8 @@ public class pengaturan extends javax.swing.JInternalFrame {
         setBorder(null);
         setAlignmentX(0.0F);
         setAlignmentY(0.0F);
-        setPreferredSize(new java.awt.Dimension(500, 600));
+        setMinimumSize(new java.awt.Dimension(605, 500));
+        setPreferredSize(new java.awt.Dimension(625, 500));
 
         jPanel1.setBackground(new java.awt.Color(253, 255, 252));
 
@@ -157,7 +158,7 @@ public class pengaturan extends javax.swing.JInternalFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(id)
                             .addComponent(sandi, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE))))
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -216,6 +217,11 @@ public class pengaturan extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void infoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_infoActionPerformed
+        if (nama.getText().isEmpty() || jenis_kelamin.getSelectedItem().toString().isEmpty() || no_telp.getText().isEmpty() || alamat.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Masih ada data yang kosong!", "Peringatan", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        
         try {
             data_adapter.SetInfo(nama.getText(), jenis_kelamin.getSelectedItem().toString(), no_telp.getText(), alamat.getText());
             JOptionPane.showMessageDialog(this, "Berhasil menyimpan informasi terbaru", "Update Info", JOptionPane.INFORMATION_MESSAGE);
@@ -225,6 +231,11 @@ public class pengaturan extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_infoActionPerformed
 
     private void authActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_authActionPerformed
+        if (id.getText().isEmpty() || sandi.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Masih ada data yang kosong!", "Peringatan", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        
         try {
             data_adapter.SetAuth(id.getText(), sandi.getText());
             JOptionPane.showMessageDialog(this, "Berhasil menyimpan autentikasi terbaru", "Update Login", JOptionPane.INFORMATION_MESSAGE);
