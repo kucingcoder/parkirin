@@ -220,7 +220,10 @@ public class dashboard extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_tarifActionPerformed
 
     private void kendaraanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kendaraanActionPerformed
-        // TODO add your handling code here:
+        pemarkiran parkir = new pemarkiran();
+        kerja.removeAll();
+        kerja.add(parkir);
+        parkir.setVisible(true);
     }//GEN-LAST:event_kendaraanActionPerformed
 
     private void analisisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_analisisActionPerformed
