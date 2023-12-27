@@ -60,76 +60,48 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
-                      <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                          <Component id="jScrollPane1" alignment="1" min="-2" pref="200" max="-2" attributes="0"/>
+                      <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                          <Component id="jScrollPane1" min="-2" pref="200" max="-2" attributes="0"/>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel12" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel10" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="akun_uuid" pref="142" max="32767" attributes="0"/>
-                                  <Component id="akun_nama" max="32767" attributes="0"/>
+                                  <Component id="jenis_id" pref="142" max="32767" attributes="0"/>
+                                  <Component id="jenis_nama" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
                   </Group>
                   <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="save" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="edit" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="delete" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="no_telp" max="32767" attributes="0"/>
-                              <Component id="alamat" max="32767" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="nama" pref="200" max="32767" attributes="0"/>
-                                          <Component id="jenis_kelamin" max="32767" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jLabel8" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel11" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="sandi" pref="200" max="32767" attributes="0"/>
-                                          <Component id="id" pref="200" max="32767" attributes="0"/>
-                                          <Component id="level" alignment="1" pref="200" max="32767" attributes="0"/>
-                                      </Group>
-                                  </Group>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="114" max="-2" attributes="0"/>
-                                  <Component id="save" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="edit" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="delete" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="awal" min="-2" pref="206" max="-2" attributes="0"/>
+                                  <Component id="jenis" min="-2" pref="206" max="-2" attributes="0"/>
+                                  <Component id="perjam" alignment="0" min="-2" pref="206" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
+                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="58" max="32767" attributes="0"/>
+                  <EmptySpace pref="52" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -144,54 +116,34 @@
                       <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="jScrollPane1" max="32767" attributes="0"/>
+                          <Component id="jScrollPane1" min="-2" pref="272" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="akun_uuid" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jenis_id" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="akun_nama" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jenis_nama" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="id" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jenis" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="sandi" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="level" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="nama" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="awal" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jenis_kelamin" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="perjam" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="no_telp" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="alamat" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
@@ -212,7 +164,8 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Poppins SemiBold" size="24" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Akun Pegawai"/>
+            <Property name="text" type="java.lang.String" value="Tetapkan Tarif"/>
+            <Property name="toolTipText" type="java.lang.String" value=""/>
           </Properties>
         </Component>
         <Container class="javax.swing.JScrollPane" name="jScrollPane1">
@@ -256,7 +209,7 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/Assets/delete.png"/>
             </Property>
-            <Property name="toolTipText" type="java.lang.String" value="Hapus Akun"/>
+            <Property name="toolTipText" type="java.lang.String" value="Hapus Tarif"/>
             <Property name="margin" type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">
               <Insets value="[10, 10, 10, 10]"/>
             </Property>
@@ -278,69 +231,29 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Poppins Light" size="14" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Nama"/>
+            <Property name="text" type="java.lang.String" value="Tarif 1x24 Jam"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel4">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Poppins Light" size="14" style="0"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Jenis Kelamin"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="nama">
+        <Component class="javax.swing.JTextField" name="awal">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Poppins Light" size="14" style="0"/>
             </Property>
           </Properties>
-        </Component>
-        <Component class="javax.swing.JComboBox" name="jenis_kelamin">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Poppins Light" size="14" style="0"/>
-            </Property>
-            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="2">
-                <StringItem index="0" value="Laki - Laki"/>
-                <StringItem index="1" value="Perempuan"/>
-              </StringArray>
-            </Property>
-            <Property name="toolTipText" type="java.lang.String" value=""/>
-          </Properties>
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-          </AuxValues>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel8">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Poppins Light" size="14" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="ID"/>
+            <Property name="text" type="java.lang.String" value="Jenis"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="id">
+        <Component class="javax.swing.JTextField" name="jenis">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Poppins Light" size="14" style="0"/>
             </Property>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JPasswordField" name="sandi">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Poppins Light" size="14" style="0"/>
-            </Property>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabel9">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Poppins Light" size="14" style="0"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Sandi"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="save">
@@ -357,7 +270,7 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/Assets/save.png"/>
             </Property>
-            <Property name="toolTipText" type="java.lang.String" value="Buat Akun Baru"/>
+            <Property name="toolTipText" type="java.lang.String" value="Buat Tarif Baru"/>
             <Property name="margin" type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">
               <Insets value="[10, 10, 10, 10]"/>
             </Property>
@@ -380,7 +293,7 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/Assets/edit.png"/>
             </Property>
-            <Property name="toolTipText" type="java.lang.String" value="Update Akun"/>
+            <Property name="toolTipText" type="java.lang.String" value="Update Tarif"/>
             <Property name="margin" type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">
               <Insets value="[10, 10, 10, 10]"/>
             </Property>
@@ -397,7 +310,7 @@
             <Property name="text" type="java.lang.String" value="Daftar"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="akun_uuid">
+        <Component class="javax.swing.JTextField" name="jenis_id">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -410,43 +323,18 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Poppins Light" size="14" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="UUID"/>
+            <Property name="text" type="java.lang.String" value="ID"/>
           </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabel11">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Poppins Light" size="14" style="0"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Level"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JComboBox" name="level">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Poppins Light" size="14" style="0"/>
-            </Property>
-            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="2">
-                <StringItem index="0" value="Standar"/>
-                <StringItem index="1" value="Admin"/>
-              </StringArray>
-            </Property>
-            <Property name="toolTipText" type="java.lang.String" value=""/>
-          </Properties>
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-          </AuxValues>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel12">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Poppins Light" size="14" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="NAMA"/>
+            <Property name="text" type="java.lang.String" value="Jenis"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="akun_nama">
+        <Component class="javax.swing.JTextField" name="jenis_nama">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -454,34 +342,19 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel5">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Poppins Light" size="14" style="0"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="No Telephone"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="no_telp">
+        <Component class="javax.swing.JTextField" name="perjam">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Poppins Light" size="14" style="0"/>
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="alamat">
+        <Component class="javax.swing.JLabel" name="jLabel4">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Poppins Light" size="14" style="0"/>
             </Property>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabel6">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Poppins Light" size="14" style="0"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Alamat"/>
+            <Property name="text" type="java.lang.String" value="Tarif Per Jam"/>
           </Properties>
         </Component>
       </SubComponents>

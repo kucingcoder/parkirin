@@ -63,8 +63,8 @@ public class pegawai extends javax.swing.JInternalFrame {
         setBorder(null);
         setAlignmentX(0.0F);
         setAlignmentY(0.0F);
-        setMinimumSize(new java.awt.Dimension(605, 500));
-        setPreferredSize(new java.awt.Dimension(625, 500));
+        setMinimumSize(new java.awt.Dimension(605, 550));
+        setPreferredSize(new java.awt.Dimension(625, 550));
 
         jPanel1.setBackground(new java.awt.Color(253, 255, 252));
 
@@ -288,7 +288,7 @@ public class pegawai extends javax.swing.JInternalFrame {
                             .addComponent(save)
                             .addComponent(delete)
                             .addComponent(edit))))
-                .addContainerGap(40, Short.MAX_VALUE))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
