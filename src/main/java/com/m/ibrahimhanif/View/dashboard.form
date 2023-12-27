@@ -57,7 +57,7 @@
     <Container class="javax.swing.JPanel" name="navbar">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ee" green="fa" red="f1" type="rgb"/>
+          <Color blue="5" green="88" red="f1" type="rgb"/>
         </Property>
       </Properties>
 
@@ -78,7 +78,7 @@
                   <Component id="jPanel2" min="-2" pref="120" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jPanel1" min="-2" pref="300" max="-2" attributes="0"/>
-                  <EmptySpace min="0" pref="150" max="32767" attributes="0"/>
+                  <EmptySpace pref="150" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -87,7 +87,7 @@
         <Container class="javax.swing.JPanel" name="jPanel2">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ee" green="fa" red="f1" type="rgb"/>
+              <Color blue="5" green="88" red="f1" type="rgb"/>
             </Property>
             <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
               <Dimension value="[200, 200]"/>
@@ -105,7 +105,7 @@
                   <Font name="Poppins SemiBold" size="32" style="0"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="5" green="88" red="f1" type="rgb"/>
+                  <Color blue="fc" green="ff" red="fd" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="PARKIRIN"/>
               </Properties>
@@ -120,7 +120,7 @@
         <Container class="javax.swing.JPanel" name="jPanel1">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ee" green="fa" red="f1" type="rgb"/>
+              <Color blue="5" green="88" red="f1" type="rgb"/>
             </Property>
           </Properties>
 
@@ -133,13 +133,13 @@
             <Component class="javax.swing.JToggleButton" name="analisis">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ee" green="fa" red="f1" type="rgb"/>
+                  <Color blue="5" green="88" red="f1" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Poppins Medium" size="14" style="0"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="5" green="88" red="f1" type="rgb"/>
+                  <Color blue="fc" green="ff" red="fd" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Analisis"/>
                 <Property name="horizontalAlignment" type="int" value="10"/>
@@ -151,13 +151,13 @@
             <Component class="javax.swing.JToggleButton" name="kendaraan">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ee" green="fa" red="f1" type="rgb"/>
+                  <Color blue="5" green="88" red="f1" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Poppins Medium" size="14" style="0"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="5" green="88" red="f1" type="rgb"/>
+                  <Color blue="fc" green="ff" red="fd" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Kelola Kendaraan"/>
                 <Property name="horizontalAlignment" type="int" value="10"/>
@@ -169,13 +169,13 @@
             <Component class="javax.swing.JToggleButton" name="tarif">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ee" green="fa" red="f1" type="rgb"/>
+                  <Color blue="5" green="88" red="f1" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Poppins Medium" size="14" style="0"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="5" green="88" red="f1" type="rgb"/>
+                  <Color blue="fc" green="ff" red="fd" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Tetapkan Tarif"/>
                 <Property name="horizontalAlignment" type="int" value="10"/>
@@ -187,13 +187,13 @@
             <Component class="javax.swing.JToggleButton" name="pegawai">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ee" green="fa" red="f1" type="rgb"/>
+                  <Color blue="5" green="88" red="f1" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Poppins Medium" size="14" style="0"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="5" green="88" red="f1" type="rgb"/>
+                  <Color blue="fc" green="ff" red="fd" type="rgb"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="10"/>
                 <Property name="label" type="java.lang.String" value="Akun Pegawai"/>
@@ -205,13 +205,13 @@
             <Component class="javax.swing.JToggleButton" name="pengaturan">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ee" green="fa" red="f1" type="rgb"/>
+                  <Color blue="5" green="88" red="f1" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Poppins Medium" size="14" style="0"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="5" green="88" red="f1" type="rgb"/>
+                  <Color blue="fc" green="ff" red="fd" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Pengaturan"/>
                 <Property name="horizontalAlignment" type="int" value="10"/>
@@ -220,19 +220,19 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pengaturanActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JToggleButton" name="keluar">
+            <Component class="javax.swing.JButton" name="keluar">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ee" green="fa" red="f1" type="rgb"/>
+                  <Color blue="2c" green="2c" red="ff" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Poppins Medium" size="14" style="0"/>
+                  <Font name="Poppins Medium" size="14" style="1"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="5" green="88" red="f1" type="rgb"/>
+                  <Color blue="fc" green="ff" red="fd" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Keluar"/>
-                <Property name="horizontalAlignment" type="int" value="10"/>
+                <Property name="text" type="java.lang.String" value="keluar"/>
+                <Property name="horizontalTextPosition" type="int" value="0"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="keluarActionPerformed"/>

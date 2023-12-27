@@ -104,6 +104,7 @@ public class pengaturan extends javax.swing.JInternalFrame {
         info.setFont(new java.awt.Font("Poppins Medium", 0, 14)); // NOI18N
         info.setForeground(new java.awt.Color(253, 255, 252));
         info.setText("Simpan");
+        info.setMargin(new java.awt.Insets(3, 14, 3, 14));
         info.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 infoActionPerformed(evt);
@@ -114,6 +115,7 @@ public class pengaturan extends javax.swing.JInternalFrame {
         auth.setFont(new java.awt.Font("Poppins Medium", 0, 14)); // NOI18N
         auth.setForeground(new java.awt.Color(253, 255, 252));
         auth.setText("Simpan");
+        auth.setMargin(new java.awt.Insets(3, 14, 3, 14));
         auth.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 authActionPerformed(evt);
@@ -199,7 +201,7 @@ public class pengaturan extends javax.swing.JInternalFrame {
                     .addComponent(sandi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(auth)
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -239,6 +241,8 @@ public class pengaturan extends javax.swing.JInternalFrame {
         try {
             data_adapter.SetAuth(id.getText(), sandi.getText());
             JOptionPane.showMessageDialog(this, "Berhasil menyimpan autentikasi terbaru", "Update Login", JOptionPane.INFORMATION_MESSAGE);
+            id.setText("");
+            sandi.setText("");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, e.getMessage(), "Sistem Gagal", JOptionPane.ERROR_MESSAGE);
         }
