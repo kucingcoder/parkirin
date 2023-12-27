@@ -11,6 +11,7 @@ public class main extends javax.swing.JFrame {
         initComponents();
         FlatLaf.setGlobalExtraDefaults( Collections.singletonMap( "@accentColor", "#F18805" ) );
         FlatArcOrangeIJTheme.setup();
+        this.setIconImage(new javax.swing.ImageIcon(getClass().getResource("/Assets/icon.png")).getImage());
         try {
             data_adapter.MuatPengaturan();
             autentikasi login = new autentikasi();
