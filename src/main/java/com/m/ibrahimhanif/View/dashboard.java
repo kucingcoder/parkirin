@@ -1,4 +1,5 @@
 package com.m.ibrahimhanif.View;
+import com.formdev.flatlaf.FlatClientProperties;
 import com.m.ibrahimhanif.Controller.data_adapter;
 import java.beans.PropertyVetoException;
 import javax.swing.JOptionPane;
@@ -12,6 +13,14 @@ public class dashboard extends javax.swing.JInternalFrame {
             this.setMaximum(true);
             BasicInternalFrameUI bi = (BasicInternalFrameUI)this.getUI();
             bi.setNorthPane(null);
+            
+            analisis.putClientProperty( FlatClientProperties.STYLE, "selectedBackground:#F18805" );
+            kendaraan.putClientProperty( FlatClientProperties.STYLE, "selectedBackground:#F18805" );
+            tarif.putClientProperty( FlatClientProperties.STYLE, "selectedBackground:#F18805" );
+            pegawai.putClientProperty( FlatClientProperties.STYLE, "selectedBackground:#F18805" );
+            pengaturan.putClientProperty( FlatClientProperties.STYLE, "selectedBackground:#F18805" );
+            keluar.putClientProperty( FlatClientProperties.STYLE, "selectedBackground:#F18805" );
+            
             menu.add(analisis);
             menu.add(kendaraan);
             menu.add(tarif);
