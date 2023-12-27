@@ -28,4 +28,45 @@ public class data_adapter {
             return false;
         }
     }
+    
+    public static ResultSet GetInfo () throws Exception {
+        ResultSet rs;
+        rs = database.AmbilData("SELECT nama, gender, telp, alamat FROM pegawai WHERE uuid = '" + akun.uuid + "'");
+        
+        if (rs.next()) { return rs; }
+        else { return null; }
+    }
+    
+    public static void SetInfo (String nama, String j_kelamin, String no_telp, String alamat) throws Exception {
+        database.SetData("UPDATE pegawai SET nama = '" + nama + "', gender = '" + j_kelamin + "', telp = '" + no_telp + "', alamat = '" + alamat + "' WHERE uuid = '" + akun.uuid + "'");
+    }
+    
+    public static void SetAuth (String id, String sandi) throws Exception {
+        database.SetData("UPDATE pegawai SET id = '" + id + "', sandi = MD5('" + sandi + "') WHERE uuid = '" + akun.uuid + "'");
+    }
+    
+    public static ResultSet GetAkun () throws Exception {
+        ResultSet rs;
+        rs = database.AmbilData("SELECT uuid, nama from pegawai");
+        
+        return rs;
+    }
+    
+    public static ResultSet GetAkun (String uuid) throws Exception {
+        ResultSet rs;
+        rs = database.AmbilData("SELECT level ,nama, gender, telp, alamat FROM pegawai WHERE uuid = '" + uuid + "'");
+        return rs;
+    }
+    
+    public static void AddAkun (String id, String sandi, String nama, String j_kelamin, String no_telp, String alamat, String level) throws Exception {
+        database.SetData("INSERT INTO pegawai (uuid,id,sandi,nama,gender,telp,alamat,level) VALUES (MD5(NOW()),'" + id + "',MD5('" + sandi + "'),'" + nama + "','" + j_kelamin + "','" + no_telp + "','" + alamat + "','" + level + "')");
+    }
+    
+    public static void UpAkun (String id, String sandi, String nama, String j_kelamin, String no_telp, String alamat, String level, String uuid) throws Exception {
+        database.SetData("UPDATE pegawai SET id = '" + id + "', sandi = MD5('" + sandi + "'), nama = '" + nama + "', gender = '" + j_kelamin + "', telp = '" + no_telp + "', alamat = '" + alamat + "' WHERE uuid = '" + uuid + "'");
+    }
+    
+    public static void DelAkun (String uuid) throws Exception {
+        database.SetData("DELETE FROM pegawai WHERE uuid = '" + uuid + "'");
+    }
 }
