@@ -1,13 +1,16 @@
 package com.m.ibrahimhanif.View;
-import com.formdev.flatlaf.intellijthemes.FlatArcOrangeIJTheme;
+import com.formdev.flatlaf.FlatIntelliJLaf;
+import com.formdev.flatlaf.FlatLaf;
 import com.m.ibrahimhanif.Controller.data_adapter;
+import java.util.Collections;
 import javax.swing.JOptionPane;
 
 public class main extends javax.swing.JFrame {
 
     public main() {
         initComponents();
-        FlatArcOrangeIJTheme.setup();
+        FlatLaf.setGlobalExtraDefaults( Collections.singletonMap( "@accentColor", "#F18805" ) );
+        FlatIntelliJLaf.setup();
         try {
             data_adapter.MuatPengaturan();
             autentikasi login = new autentikasi();
