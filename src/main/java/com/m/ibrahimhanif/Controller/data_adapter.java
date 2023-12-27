@@ -48,7 +48,6 @@ public class data_adapter {
     public static ResultSet GetAkun () throws Exception {
         ResultSet rs;
         rs = database.AmbilData("SELECT uuid, nama from pegawai");
-        
         return rs;
     }
     
@@ -68,5 +67,29 @@ public class data_adapter {
     
     public static void DelAkun (String uuid) throws Exception {
         database.SetData("DELETE FROM pegawai WHERE uuid = '" + uuid + "'");
+    }
+    
+    public static ResultSet GetTarif () throws Exception {
+        ResultSet rs;
+        rs = database.AmbilData("SELECT id, jenis from tarif");
+        return rs;
+    }
+    
+    public static ResultSet GetTarif (int id) throws Exception {
+        ResultSet rs;
+        rs = database.AmbilData("SELECT jenis, hari_pertama, per_jam FROM tarif WHERE id = " + id);
+        return rs;
+    }
+    
+    public static void AddTarif (String jenis, int awal, int perjam) throws Exception {
+        database.SetData("INSERT INTO tarif (jenis,hari_pertama,per_jam) VALUES ('" + jenis + "',"+ awal + "," + perjam + ")");
+    }
+    
+    public static void UpTarif (String jenis, int awal, int perjam, int id) throws Exception {
+        database.SetData("UPDATE tarif SET jenis = '" + jenis + "', hari_pertama = " + awal + ", per_jam = " + perjam + " WHERE id = " + id);
+    }
+    
+    public static void DelTarif (int id) throws Exception {
+        database.SetData("DELETE FROM tarif WHERE id = " + id);
     }
 }
