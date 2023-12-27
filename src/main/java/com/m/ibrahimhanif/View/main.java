@@ -55,6 +55,8 @@ public class main extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(900, 600));
 
         konten.setBackground(new java.awt.Color(253, 255, 252));
+        konten.setAlignmentX(0.0F);
+        konten.setAlignmentY(0.0F);
         konten.setMinimumSize(new java.awt.Dimension(900, 600));
 
         javax.swing.GroupLayout kontenLayout = new javax.swing.GroupLayout(konten);
