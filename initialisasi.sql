@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Dec 26, 2023 at 02:54 PM
+-- Generation Time: Dec 28, 2023 at 02:43 AM
 -- Server version: 10.6.12-MariaDB-0ubuntu0.22.04.1
 -- PHP Version: 8.1.2-1ubuntu2.14
 
@@ -43,7 +43,7 @@ CREATE TABLE `pegawai` (
 --
 
 INSERT INTO `pegawai` (`uuid`, `id`, `sandi`, `nama`, `gender`, `telp`, `alamat`, `level`) VALUES
-('1ac82eb3644ea8f3ef0b4e9322e59cba', 'admin', '21232f297a57a5a743894a0e4a801fc3', 'Admin', 'Laki - Laki', '-', '-', 'Admin');
+('1ac82eb3644ea8f3ef0b4e9322e59cba', 'admin', '21232f297a57a5a743894a0e4a801fc3', 'Default Admin', 'Laki - Laki', '-', '-', 'Admin');
 
 -- --------------------------------------------------------
 
@@ -56,9 +56,9 @@ CREATE TABLE `pemarkiran` (
   `nopol` varchar(15) NOT NULL,
   `jenis` int(11) NOT NULL,
   `masuk` datetime NOT NULL,
-  `keluar` datetime NOT NULL,
-  `status` enum('Normal','Bayar Denda') NOT NULL DEFAULT 'Normal',
-  `tarif` int(11) NOT NULL,
+  `keluar` datetime DEFAULT NULL,
+  `status` enum('Normal','Bayar Denda') DEFAULT NULL,
+  `biaya` int(11) DEFAULT NULL,
   `pegawai` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
