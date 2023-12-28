@@ -2,6 +2,9 @@ package com.m.ibrahimhanif.Controller;
 import com.m.ibrahimhanif.Model.basis_data;
 import com.m.ibrahimhanif.Model.pengaturan;
 import java.sql.ResultSet;
+import java.time.Duration;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class data_adapter {
     public static pengaturan settingan;
@@ -91,5 +94,77 @@ public class data_adapter {
     
     public static void DelTarif (int id) throws Exception {
         database.SetData("DELETE FROM tarif WHERE id = " + id);
+    }
+    
+    public static int GetDenda (String nopol) throws Exception {
+        ResultSet tarif, waktu;
+        int awal = 0, perjam = 0;
+        long biaya;
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        LocalDateTime waktu_masuk = null, waktu_keluar = null;
+        Duration selisihWaktu;
+        
+        tarif = database.AmbilData("SELECT hari_pertama, per_jam FROM tarif WHERE jenis = (select jenis FROM pemarkiran WHERE nopol = '" + nopol + "' AND status IS NULL)");
+        
+        if (tarif.next()) {
+            awal = tarif.getInt("hari_pertama");
+            perjam = tarif.getInt("per_jam");
+        } else {
+            return 0;
+        }
+        
+        waktu = database.AmbilData("SELECT masuk FROM pemarkiran WHERE nopol = '" + nopol + "' AND status IS NULL");
+        
+        if (waktu.next()) {
+            waktu_masuk = LocalDateTime.parse(waktu.getString("masuk"), formatter);
+            waktu_keluar = LocalDateTime.now();
+        }
+        
+        selisihWaktu = Duration.between(waktu_masuk, waktu_keluar);
+        
+        if (selisihWaktu.toHours() <= 24) { biaya = awal; }
+        else { biaya = awal + ((selisihWaktu.toHours() - 24) * perjam); }
+        
+        return (int) biaya * 2;
+    }
+    
+    public static void KendaraanMasuk (String nopol, int id) throws Exception {
+        database.SetData("INSERT INTO pemarkiran (nopol, jenis, masuk, pegawai) VALUES ('" + nopol + "', (SELECT jenis FROM tarif WHERE id = '" + id + "'), NOW(), (SELECT nama FROM pegawai WHERE uuid = '" + akun.uuid + "'))");
+    }
+    
+    public static void KendaraanKeluar (int id) throws Exception {
+        ResultSet tarif, waktu;
+        int awal = 0, perjam = 0;
+        long biaya;
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        LocalDateTime waktu_masuk = null, waktu_keluar = null;
+        Duration selisihWaktu;
+        
+        tarif = database.AmbilData("SELECT hari_pertama, per_jam FROM tarif WHERE jenis = (select jenis FROM pemarkiran WHERE no = " + id + " AND status IS NULL)");
+        
+        if (tarif.next()) {
+            awal = tarif.getInt("hari_pertama");
+            perjam = tarif.getInt("per_jam");
+        } else {
+            return;
+        }
+        
+        waktu = database.AmbilData("SELECT masuk FROM pemarkiran WHERE no = " + id);
+        
+        if (waktu.next()) {
+            waktu_masuk = LocalDateTime.parse(waktu.getString("masuk"), formatter);
+            waktu_keluar = LocalDateTime.now();
+        }
+        
+        selisihWaktu = Duration.between(waktu_masuk, waktu_keluar);
+        
+        if (selisihWaktu.toHours() <= 24) { biaya = awal; }
+        else { biaya = awal + ((selisihWaktu.toHours() - 24) * perjam); }
+        
+        database.SetData("UPDATE pemarkiran SET keluar= '" + waktu_keluar.format(formatter) + "',status='Normal', biaya= " + biaya + ", pegawai = (SELECT nama FROM pegawai WHERE uuid = '" + akun.uuid + "') WHERE no = " + id);
+    }
+    
+    public static void KendaraanKeluar (String nopol, Integer biaya) throws Exception {
+        database.SetData("UPDATE pemarkiran SET keluar= NOW(), status='Bayar Denda', biaya= " + biaya + ", pegawai = (SELECT nama FROM pegawai WHERE uuid = '" + akun.uuid + "') WHERE nopol = '" + nopol + "' AND status IS NULL");
     }
 }
