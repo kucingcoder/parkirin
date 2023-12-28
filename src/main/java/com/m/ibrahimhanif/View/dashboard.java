@@ -31,6 +31,11 @@ public class dashboard extends javax.swing.JInternalFrame {
                 jPanel1.remove(pegawai);
             }
             
+            analisis anal = new analisis();
+            kerja.removeAll();
+            kerja.add(anal);
+            anal.setVisible(true);
+            
             analisis.setSelected(true);
         } catch (PropertyVetoException e) {}
     }
@@ -227,7 +232,10 @@ public class dashboard extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_kendaraanActionPerformed
 
     private void analisisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_analisisActionPerformed
-        // TODO add your handling code here:
+        analisis anal = new analisis();
+        kerja.removeAll();
+        kerja.add(anal);
+        anal.setVisible(true);
     }//GEN-LAST:event_analisisActionPerformed
 
     private void keluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_keluarActionPerformed
