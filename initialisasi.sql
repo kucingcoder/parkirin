@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Dec 28, 2023 at 02:43 AM
+-- Generation Time: Dec 28, 2023 at 11:25 AM
 -- Server version: 10.6.12-MariaDB-0ubuntu0.22.04.1
 -- PHP Version: 8.1.2-1ubuntu2.14
 
@@ -54,12 +54,12 @@ INSERT INTO `pegawai` (`uuid`, `id`, `sandi`, `nama`, `gender`, `telp`, `alamat`
 CREATE TABLE `pemarkiran` (
   `no` int(11) NOT NULL,
   `nopol` varchar(15) NOT NULL,
-  `jenis` int(11) NOT NULL,
+  `jenis` varchar(120) NOT NULL,
   `masuk` datetime NOT NULL,
   `keluar` datetime DEFAULT NULL,
   `status` enum('Normal','Bayar Denda') DEFAULT NULL,
   `biaya` int(11) DEFAULT NULL,
-  `pegawai` int(11) NOT NULL
+  `pegawai` varchar(120) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -96,7 +96,8 @@ ALTER TABLE `pemarkiran`
 -- Indexes for table `tarif`
 --
 ALTER TABLE `tarif`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `jenis` (`jenis`);
 
 --
 -- AUTO_INCREMENT for dumped tables
