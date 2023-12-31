@@ -18,7 +18,7 @@ public class data_adapter {
         database.Hubungkan(settingan.getKoneksiDatabase());
     }
     
-    public static boolean Masuk(String id, String sandi) {
+    public static boolean Masuk (String id, String sandi) {
         try {
             ResultSet rs;
             rs = database.AmbilData("SELECT uuid, level FROM pegawai WHERE id = '" + id + "' and sandi = MD5('" + sandi + "')");
@@ -127,6 +127,12 @@ public class data_adapter {
         else { biaya = awal + ((selisihWaktu.toHours() - 24) * perjam); }
         
         return (int) biaya * 2;
+    }
+    
+    public static ResultSet GetKendaraanMasuk () throws Exception {
+        ResultSet rs;
+        rs = database.AmbilData("SELECT DATE_FORMAT(NOW(), '%d-%m-%Y') AS 'tanggal', TIME_FORMAT(masuk, '%H:%i') AS 'waktu', no, nopol, jenis, pegawai FROM pemarkiran ORDER BY no DESC LIMIT 20");
+        return rs;
     }
     
     public static void KendaraanMasuk (String nopol, int id) throws Exception {
