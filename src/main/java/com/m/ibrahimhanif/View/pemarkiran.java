@@ -1,4 +1,5 @@
 package com.m.ibrahimhanif.View;
+import com.github.sarxos.webcam.Webcam;
 import com.m.ibrahimhanif.Controller.data_adapter;
 import java.awt.Font;
 import java.awt.event.KeyEvent;
@@ -32,12 +33,15 @@ public class pemarkiran extends javax.swing.JInternalFrame {
             ukuran_printer.add(c);
             ukuran_printer.add(d);
             
+            for (Webcam webcam : Webcam.getWebcams()) { kamera.addItem(webcam.getName()); }
+            
             PrintService[] printServices = PrintServiceLookup.lookupPrintServices(null, null);
             
             for (PrintService printService : printServices) {
                 printer.addItem(printService.getName());
             }
             
+            kamera.setSelectedIndex(-1);
             printer.setSelectedIndex(-1);
             
             ResultSet jenis = data_adapter.GetTarif();
@@ -106,7 +110,7 @@ public class pemarkiran extends javax.swing.JInternalFrame {
         jLabel12 = new javax.swing.JLabel();
         printer = new javax.swing.JComboBox<>();
         jLabel13 = new javax.swing.JLabel();
-        jenis_kendaraan2 = new javax.swing.JComboBox<>();
+        kamera = new javax.swing.JComboBox<>();
         jPanel3 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -252,9 +256,9 @@ public class pemarkiran extends javax.swing.JInternalFrame {
         jLabel13.setFont(new java.awt.Font("Poppins Light", 0, 14)); // NOI18N
         jLabel13.setText("Kamera");
 
-        jenis_kendaraan2.setBackground(new java.awt.Color(253, 255, 252));
-        jenis_kendaraan2.setFont(new java.awt.Font("Poppins Light", 0, 14)); // NOI18N
-        jenis_kendaraan2.setToolTipText("");
+        kamera.setBackground(new java.awt.Color(253, 255, 252));
+        kamera.setFont(new java.awt.Font("Poppins Light", 0, 14)); // NOI18N
+        kamera.setToolTipText("");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -273,7 +277,7 @@ public class pemarkiran extends javax.swing.JInternalFrame {
                                     .addGroup(jPanel2Layout.createSequentialGroup()
                                         .addComponent(jLabel13)
                                         .addGap(18, 18, 18)
-                                        .addComponent(jenis_kendaraan2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                        .addComponent(kamera, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                                 .addGap(87, 87, 87)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
@@ -318,7 +322,7 @@ public class pemarkiran extends javax.swing.JInternalFrame {
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel13)
-                            .addComponent(jenis_kendaraan2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(kamera, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -582,8 +586,6 @@ public class pemarkiran extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(this, "Berhasil mencatat kendaraan", "Parkir Masuk", JOptionPane.INFORMATION_MESSAGE);
             nopol.setText("");
             jenis_kendaraan.setSelectedIndex(-1);
-            printer.setSelectedIndex(-1);
-            ukuran_printer.clearSelection();
             refresh();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, e.getMessage(), "Sistem Gagal", JOptionPane.ERROR_MESSAGE);
@@ -698,7 +700,7 @@ public class pemarkiran extends javax.swing.JInternalFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JComboBox<String> jenis_kendaraan;
-    private javax.swing.JComboBox<String> jenis_kendaraan2;
+    private javax.swing.JComboBox<String> kamera;
     private javax.swing.JTextField no;
     private javax.swing.JTextField nopol;
     private javax.swing.JTextField nopol_tanpa_tiket;

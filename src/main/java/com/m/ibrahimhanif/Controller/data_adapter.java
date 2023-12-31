@@ -192,4 +192,16 @@ public class data_adapter {
         Timestamp timestamp = Timestamp.valueOf(now);
         database.SetData("UPDATE pemarkiran SET keluar = '" + timestamp + "', status = 'Bayar Denda', total_biaya = " + biaya + ", pegawai = (SELECT nama FROM pegawai WHERE uuid = '" + akun.uuid + "') WHERE nopol = '" + nopol + "' AND status IS NULL");
     }
+    
+    public static ResultSet GetRiwayat () throws Exception {
+        ResultSet rs;
+        rs = database.AmbilData("SELECT * FROM pemarkiran ORDER BY no DESC");
+        return rs;
+    }
+    
+    public static ResultSet GetCariRiwayat (String nopol) throws Exception {
+        ResultSet rs;
+        rs = database.AmbilData("SELECT * FROM pemarkiran WHERE nopol = '" + nopol + "' ORDER BY no DESC");
+        return rs;
+    }
 }
