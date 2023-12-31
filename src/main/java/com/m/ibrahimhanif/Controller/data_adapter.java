@@ -2,6 +2,7 @@ package com.m.ibrahimhanif.Controller;
 import com.m.ibrahimhanif.Model.basis_data;
 import com.m.ibrahimhanif.Model.pengaturan;
 import java.sql.ResultSet;
+import java.sql.Timestamp;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -129,7 +130,9 @@ public class data_adapter {
     }
     
     public static void KendaraanMasuk (String nopol, int id) throws Exception {
-        database.SetData("INSERT INTO pemarkiran (nopol, jenis, masuk, pegawai) VALUES ('" + nopol + "', (SELECT jenis FROM tarif WHERE id = '" + id + "'), NOW(), (SELECT nama FROM pegawai WHERE uuid = '" + akun.uuid + "'))");
+        LocalDateTime now = LocalDateTime.now();
+        Timestamp timestamp = Timestamp.valueOf(now);
+        database.SetData("INSERT INTO pemarkiran (nopol, jenis, masuk, pegawai) VALUES ('" + nopol + "', (SELECT jenis FROM tarif WHERE id = '" + id + "'), '" + timestamp + "', (SELECT nama FROM pegawai WHERE uuid = '" + akun.uuid + "'))");
     }
     
     public static void KendaraanKeluar (int id) throws Exception {
