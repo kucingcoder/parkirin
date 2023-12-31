@@ -80,16 +80,16 @@ public class data_adapter {
     
     public static ResultSet GetTarif (int id) throws Exception {
         ResultSet rs;
-        rs = database.AmbilData("SELECT jenis, hari_pertama, per_jam FROM tarif WHERE id = " + id);
+        rs = database.AmbilData("SELECT jenis, waktu_normal, biaya_normal, biaya_perjam FROM tarif WHERE id = " + id);
         return rs;
     }
     
-    public static void AddTarif (String jenis, int awal, int perjam) throws Exception {
-        database.SetData("INSERT INTO tarif (jenis,hari_pertama,per_jam) VALUES ('" + jenis + "',"+ awal + "," + perjam + ")");
+    public static void AddTarif (String jenis, int waktu, int normal, int perjam) throws Exception {
+        database.SetData("INSERT INTO tarif (jenis, waktu_normal, biaya_normal, biaya_perjam) VALUES ('" + jenis + "'," + waktu + "," + normal + "," + perjam + ")");
     }
     
-    public static void UpTarif (String jenis, int awal, int perjam, int id) throws Exception {
-        database.SetData("UPDATE tarif SET jenis = '" + jenis + "', hari_pertama = " + awal + ", per_jam = " + perjam + " WHERE id = " + id);
+    public static void UpTarif (String jenis, int waktu, int normal, int perjam, int id) throws Exception {
+        database.SetData("UPDATE tarif SET jenis = '" + jenis + "', waktu_normal = " + waktu + ", biaya_normal = " + normal + ", biaya_perjam = " + perjam + " WHERE id = " + id);
     }
     
     public static void DelTarif (int id) throws Exception {
