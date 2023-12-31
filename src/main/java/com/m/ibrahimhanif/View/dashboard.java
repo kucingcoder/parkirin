@@ -15,6 +15,7 @@ public class dashboard extends javax.swing.JInternalFrame {
             bi.setNorthPane(null);
             analisis.putClientProperty( FlatClientProperties.STYLE, "selectedBackground:#FDFFFC" );
             kendaraan.putClientProperty( FlatClientProperties.STYLE, "selectedBackground:#FDFFFC" );
+            riwayat.putClientProperty( FlatClientProperties.STYLE, "selectedBackground:#FDFFFC" );
             tarif.putClientProperty( FlatClientProperties.STYLE, "selectedBackground:#FDFFFC" );
             pegawai.putClientProperty( FlatClientProperties.STYLE, "selectedBackground:#FDFFFC" );
             pengaturan.putClientProperty( FlatClientProperties.STYLE, "selectedBackground:#FDFFFC" );
@@ -22,6 +23,7 @@ public class dashboard extends javax.swing.JInternalFrame {
             
             menu.add(analisis);
             menu.add(kendaraan);
+            menu.add(riwayat);
             menu.add(tarif);
             menu.add(pegawai);
             menu.add(pengaturan);
@@ -51,6 +53,7 @@ public class dashboard extends javax.swing.JInternalFrame {
         jPanel1 = new javax.swing.JPanel();
         analisis = new javax.swing.JToggleButton();
         kendaraan = new javax.swing.JToggleButton();
+        riwayat = new javax.swing.JToggleButton();
         tarif = new javax.swing.JToggleButton();
         pegawai = new javax.swing.JToggleButton();
         pengaturan = new javax.swing.JToggleButton();
@@ -77,7 +80,7 @@ public class dashboard extends javax.swing.JInternalFrame {
         jPanel2.add(jLabel2, new java.awt.GridBagConstraints());
 
         jPanel1.setBackground(new java.awt.Color(241, 136, 5));
-        jPanel1.setLayout(new java.awt.GridLayout(6, 1, 0, 15));
+        jPanel1.setLayout(new java.awt.GridLayout(7, 1, 0, 15));
 
         analisis.setBackground(new java.awt.Color(241, 136, 5));
         analisis.setFont(new java.awt.Font("Poppins Medium", 0, 14)); // NOI18N
@@ -102,6 +105,18 @@ public class dashboard extends javax.swing.JInternalFrame {
             }
         });
         jPanel1.add(kendaraan);
+
+        riwayat.setBackground(new java.awt.Color(241, 136, 5));
+        riwayat.setFont(new java.awt.Font("Poppins Medium", 0, 14)); // NOI18N
+        riwayat.setForeground(new java.awt.Color(253, 255, 252));
+        riwayat.setText("Riwayat Parkir");
+        riwayat.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
+        riwayat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                riwayatActionPerformed(evt);
+            }
+        });
+        jPanel1.add(riwayat);
 
         tarif.setBackground(new java.awt.Color(241, 136, 5));
         tarif.setFont(new java.awt.Font("Poppins Medium", 0, 14)); // NOI18N
@@ -166,8 +181,8 @@ public class dashboard extends javax.swing.JInternalFrame {
             .addGroup(navbarLayout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(150, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(100, Short.MAX_VALUE))
         );
 
         kerja.setBackground(new java.awt.Color(253, 255, 252));
@@ -242,12 +257,19 @@ public class dashboard extends javax.swing.JInternalFrame {
         int reply = JOptionPane.showConfirmDialog(this, "Apakah anda yakin keluar dan login kembali", "Keluar Akun", JOptionPane.YES_NO_OPTION);
 
         if (reply == JOptionPane.YES_OPTION) {
-            main.keluar();
+            main.auth();
             data_adapter.akun.uuid = "";
             data_adapter.akun.level = "";
             this.dispose();
         }
     }//GEN-LAST:event_keluarActionPerformed
+
+    private void riwayatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_riwayatActionPerformed
+        riwayat histori = new riwayat();
+        kerja.removeAll();
+        kerja.add(histori);
+        histori.setVisible(true);
+    }//GEN-LAST:event_riwayatActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton analisis;
@@ -261,6 +283,7 @@ public class dashboard extends javax.swing.JInternalFrame {
     private javax.swing.JPanel navbar;
     private javax.swing.JToggleButton pegawai;
     private javax.swing.JToggleButton pengaturan;
+    private javax.swing.JToggleButton riwayat;
     private javax.swing.JToggleButton tarif;
     // End of variables declaration//GEN-END:variables
 }
