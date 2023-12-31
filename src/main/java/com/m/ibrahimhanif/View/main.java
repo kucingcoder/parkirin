@@ -35,7 +35,7 @@ public class main extends javax.swing.JFrame {
         kerja.setVisible(true);
     }
     
-    public static void keluar(){
+    public static void auth(){
         autentikasi kerja = new autentikasi();
         konten.add(kerja);
         kerja.setVisible(true);
@@ -50,10 +50,11 @@ public class main extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Parkirin");
         setBackground(new java.awt.Color(255, 255, 255));
-        setMinimumSize(new java.awt.Dimension(900, 600));
+        setFocusTraversalPolicyProvider(true);
+        setMinimumSize(new java.awt.Dimension(920, 640));
         setName("halaman_utama"); // NOI18N
-        setPreferredSize(new java.awt.Dimension(880, 600));
-        setSize(new java.awt.Dimension(900, 600));
+        setPreferredSize(new java.awt.Dimension(920, 640));
+        setSize(new java.awt.Dimension(920, 640));
 
         konten.setBackground(new java.awt.Color(253, 255, 252));
         konten.setAlignmentX(0.0F);
@@ -64,11 +65,11 @@ public class main extends javax.swing.JFrame {
         konten.setLayout(kontenLayout);
         kontenLayout.setHorizontalGroup(
             kontenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 900, Short.MAX_VALUE)
+            .addGap(0, 920, Short.MAX_VALUE)
         );
         kontenLayout.setVerticalGroup(
             kontenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
+            .addGap(0, 640, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
