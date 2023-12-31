@@ -69,8 +69,10 @@ public class pengaturan extends javax.swing.JInternalFrame {
         jLabel3.setFont(new java.awt.Font("Poppins Light", 0, 14)); // NOI18N
         jLabel3.setText("Nama");
 
+        nama.setBackground(new java.awt.Color(253, 255, 252));
         nama.setFont(new java.awt.Font("Poppins Light", 0, 14)); // NOI18N
 
+        jenis_kelamin.setBackground(new java.awt.Color(253, 255, 252));
         jenis_kelamin.setFont(new java.awt.Font("Poppins Light", 0, 14)); // NOI18N
         jenis_kelamin.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Laki - Laki", "Perempuan" }));
         jenis_kelamin.setSelectedIndex(-1);
@@ -82,11 +84,13 @@ public class pengaturan extends javax.swing.JInternalFrame {
         jLabel5.setFont(new java.awt.Font("Poppins Light", 0, 14)); // NOI18N
         jLabel5.setText("No Telephone");
 
+        no_telp.setBackground(new java.awt.Color(253, 255, 252));
         no_telp.setFont(new java.awt.Font("Poppins Light", 0, 14)); // NOI18N
 
         jLabel6.setFont(new java.awt.Font("Poppins Light", 0, 14)); // NOI18N
         jLabel6.setText("Alamat");
 
+        alamat.setBackground(new java.awt.Color(253, 255, 252));
         alamat.setFont(new java.awt.Font("Poppins Light", 0, 14)); // NOI18N
 
         jLabel7.setFont(new java.awt.Font("Poppins Medium", 0, 18)); // NOI18N
@@ -95,6 +99,7 @@ public class pengaturan extends javax.swing.JInternalFrame {
         jLabel8.setFont(new java.awt.Font("Poppins Light", 0, 14)); // NOI18N
         jLabel8.setText("ID");
 
+        id.setBackground(new java.awt.Color(253, 255, 252));
         id.setFont(new java.awt.Font("Poppins Light", 0, 14)); // NOI18N
 
         jLabel9.setFont(new java.awt.Font("Poppins Light", 0, 14)); // NOI18N
@@ -122,6 +127,7 @@ public class pengaturan extends javax.swing.JInternalFrame {
             }
         });
 
+        sandi.setBackground(new java.awt.Color(253, 255, 252));
         sandi.setFont(new java.awt.Font("Poppins Light", 0, 14)); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);

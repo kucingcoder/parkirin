@@ -180,6 +180,9 @@
         </Component>
         <Component class="javax.swing.JTextField" name="nama">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="fc" green="ff" red="fd" type="rgb"/>
+            </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Poppins Light" size="14" style="0"/>
             </Property>
@@ -187,6 +190,9 @@
         </Component>
         <Component class="javax.swing.JComboBox" name="jenis_kelamin">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="fc" green="ff" red="fd" type="rgb"/>
+            </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Poppins Light" size="14" style="0"/>
             </Property>
@@ -221,6 +227,9 @@
         </Component>
         <Component class="javax.swing.JTextField" name="no_telp">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="fc" green="ff" red="fd" type="rgb"/>
+            </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Poppins Light" size="14" style="0"/>
             </Property>
@@ -236,6 +245,9 @@
         </Component>
         <Component class="javax.swing.JTextField" name="alamat">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="fc" green="ff" red="fd" type="rgb"/>
+            </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Poppins Light" size="14" style="0"/>
             </Property>
@@ -259,6 +271,9 @@
         </Component>
         <Component class="javax.swing.JTextField" name="id">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="fc" green="ff" red="fd" type="rgb"/>
+            </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Poppins Light" size="14" style="0"/>
             </Property>
@@ -314,6 +329,9 @@
         </Component>
         <Component class="javax.swing.JPasswordField" name="sandi">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="fc" green="ff" red="fd" type="rgb"/>
+            </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Poppins Light" size="14" style="0"/>
             </Property>
