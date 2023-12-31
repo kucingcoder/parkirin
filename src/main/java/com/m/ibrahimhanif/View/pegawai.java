@@ -52,8 +52,6 @@ public class pegawai extends javax.swing.JInternalFrame {
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         level = new javax.swing.JComboBox<>();
-        jLabel12 = new javax.swing.JLabel();
-        akun_nama = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         no_telp = new javax.swing.JTextField();
         alamat = new javax.swing.JTextField();
@@ -145,7 +143,10 @@ public class pegawai extends javax.swing.JInternalFrame {
         jLabel7.setText("Daftar");
 
         akun_uuid.setEditable(false);
+        akun_uuid.setBackground(new java.awt.Color(253, 255, 252));
         akun_uuid.setFont(new java.awt.Font("Poppins Light", 0, 14)); // NOI18N
+        akun_uuid.setFocusable(false);
+        akun_uuid.setRequestFocusEnabled(false);
 
         jLabel10.setFont(new java.awt.Font("Poppins Light", 0, 14)); // NOI18N
         jLabel10.setText("UUID");
@@ -156,12 +157,6 @@ public class pegawai extends javax.swing.JInternalFrame {
         level.setFont(new java.awt.Font("Poppins Light", 0, 14)); // NOI18N
         level.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Standar", "Admin" }));
         level.setToolTipText("");
-
-        jLabel12.setFont(new java.awt.Font("Poppins Light", 0, 14)); // NOI18N
-        jLabel12.setText("NAMA");
-
-        akun_nama.setEditable(false);
-        akun_nama.setFont(new java.awt.Font("Poppins Light", 0, 14)); // NOI18N
 
         jLabel5.setFont(new java.awt.Font("Poppins Light", 0, 14)); // NOI18N
         jLabel5.setText("No Telephone");
@@ -185,13 +180,9 @@ public class pegawai extends javax.swing.JInternalFrame {
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel12)
-                                .addComponent(jLabel10))
-                            .addGap(18, 18, 18)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(akun_uuid, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)
-                                .addComponent(akun_nama)))))
+                            .addComponent(jLabel10)
+                            .addGap(27, 27, 27)
+                            .addComponent(akun_uuid, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(33, 33, 33)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -251,10 +242,7 @@ public class pegawai extends javax.swing.JInternalFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(akun_uuid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel10))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(akun_nama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel12)))
+                        .addGap(43, 43, 43))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel8)
@@ -310,7 +298,6 @@ public class pegawai extends javax.swing.JInternalFrame {
             id.setText("");
             sandi.setText("");
             akun_uuid.setText(daftar_uuid.get(daftar.getSelectedIndex()));
-            akun_nama.setText(daftar.getSelectedValue());
             ResultSet data = data_adapter.GetAkun(akun_uuid.getText());
             
             if (data.next()) {
@@ -393,11 +380,9 @@ public class pegawai extends javax.swing.JInternalFrame {
         no_telp.setText("");
         alamat.setText("");
         akun_uuid.setText("");
-        akun_nama.setText("");
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField akun_nama;
     private javax.swing.JTextField akun_uuid;
     private javax.swing.JTextField alamat;
     private javax.swing.JList<String> daftar;
@@ -407,7 +392,6 @@ public class pegawai extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
