@@ -63,15 +63,9 @@
                       <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
                           <Component id="jScrollPane1" min="-2" pref="200" max="-2" attributes="0"/>
                           <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel10" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="jenis_id" pref="142" max="32767" attributes="0"/>
-                                  <Component id="jenis_nama" max="32767" attributes="0"/>
-                              </Group>
+                              <Component id="jenis_id" min="-2" pref="142" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -79,29 +73,44 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                          <Group type="102" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
                               <Component id="save" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="edit" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="delete" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="waktu" min="-2" pref="205" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="1" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" attributes="0">
+                                              <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="normal" pref="206" max="32767" attributes="0"/>
+                                          <Component id="jenis" pref="206" max="32767" attributes="0"/>
+                                          <Component id="perjam" alignment="0" pref="206" max="32767" attributes="0"/>
+                                      </Group>
+                                  </Group>
                               </Group>
-                              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="awal" min="-2" pref="206" max="-2" attributes="0"/>
-                                  <Component id="jenis" min="-2" pref="206" max="-2" attributes="0"/>
-                                  <Component id="perjam" alignment="0" min="-2" pref="206" max="-2" attributes="0"/>
-                              </Group>
+                              <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="52" max="32767" attributes="0"/>
+                  <EmptySpace pref="51" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -117,27 +126,27 @@
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
                           <Component id="jScrollPane1" min="-2" pref="272" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jenis_id" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jenis_nama" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
                       </Group>
-                      <Group type="102" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jenis" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="awal" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="waktu" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="normal" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -153,7 +162,7 @@
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace pref="45" max="32767" attributes="0"/>
+                  <EmptySpace pref="91" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -182,6 +191,9 @@
           <SubComponents>
             <Component class="javax.swing.JList" name="daftar">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="fc" green="ff" red="fd" type="rgb"/>
+                </Property>
                 <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
                   <StringArray count="0"/>
                 </Property>
@@ -231,11 +243,14 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Poppins Light" size="14" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Tarif 1x24 Jam"/>
+            <Property name="text" type="java.lang.String" value="Tarif Normal"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="awal">
+        <Component class="javax.swing.JTextField" name="normal">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="fc" green="ff" red="fd" type="rgb"/>
+            </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Poppins Light" size="14" style="0"/>
             </Property>
@@ -251,6 +266,9 @@
         </Component>
         <Component class="javax.swing.JTextField" name="jenis">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="fc" green="ff" red="fd" type="rgb"/>
+            </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Poppins Light" size="14" style="0"/>
             </Property>
@@ -313,9 +331,14 @@
         <Component class="javax.swing.JTextField" name="jenis_id">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="fc" green="ff" red="fd" type="rgb"/>
+            </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Poppins Light" size="14" style="0"/>
             </Property>
+            <Property name="focusable" type="boolean" value="false"/>
+            <Property name="requestFocusEnabled" type="boolean" value="false"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel10">
@@ -326,24 +349,11 @@
             <Property name="text" type="java.lang.String" value="ID"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel12">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Poppins Light" size="14" style="0"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Jenis"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="jenis_nama">
-          <Properties>
-            <Property name="editable" type="boolean" value="false"/>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Poppins Light" size="14" style="0"/>
-            </Property>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JTextField" name="perjam">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="fc" green="ff" red="fd" type="rgb"/>
+            </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Poppins Light" size="14" style="0"/>
             </Property>
@@ -355,6 +365,53 @@
               <Font name="Poppins Light" size="14" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Tarif Per Jam"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="waktu">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Poppins Light" size="14" style="0"/>
+            </Property>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="24">
+                <StringItem index="0" value="1 jam"/>
+                <StringItem index="1" value="2 jam"/>
+                <StringItem index="2" value="3 jam"/>
+                <StringItem index="3" value="4 jam"/>
+                <StringItem index="4" value="5 jam"/>
+                <StringItem index="5" value="6 jam"/>
+                <StringItem index="6" value="7 jam"/>
+                <StringItem index="7" value="8 jam"/>
+                <StringItem index="8" value="9 jam"/>
+                <StringItem index="9" value="10 jam"/>
+                <StringItem index="10" value="11 jam"/>
+                <StringItem index="11" value="12 jam"/>
+                <StringItem index="12" value="13 jam"/>
+                <StringItem index="13" value="14 jam"/>
+                <StringItem index="14" value="15 jam"/>
+                <StringItem index="15" value="16 jam"/>
+                <StringItem index="16" value="17 jam"/>
+                <StringItem index="17" value="18 jam"/>
+                <StringItem index="18" value="19 jam"/>
+                <StringItem index="19" value="20 jam"/>
+                <StringItem index="20" value="21 jam"/>
+                <StringItem index="21" value="22 jam"/>
+                <StringItem index="22" value="23 jam"/>
+                <StringItem index="23" value="24 jam"/>
+              </StringArray>
+            </Property>
+            <Property name="selectedIndex" type="int" value="-1"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel9">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Poppins Light" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Waktu Normal"/>
           </Properties>
         </Component>
       </SubComponents>

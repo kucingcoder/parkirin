@@ -36,7 +36,7 @@ public class tarif extends javax.swing.JInternalFrame {
         delete = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        awal = new javax.swing.JTextField();
+        normal = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jenis = new javax.swing.JTextField();
         save = new javax.swing.JButton();
@@ -44,10 +44,10 @@ public class tarif extends javax.swing.JInternalFrame {
         jLabel7 = new javax.swing.JLabel();
         jenis_id = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jenis_nama = new javax.swing.JTextField();
         perjam = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
+        waktu = new javax.swing.JComboBox<>();
+        jLabel9 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(244, 244, 249));
         setBorder(null);
@@ -64,6 +64,7 @@ public class tarif extends javax.swing.JInternalFrame {
 
         jScrollPane1.setFont(new java.awt.Font("Poppins Light", 0, 14)); // NOI18N
 
+        daftar.setBackground(new java.awt.Color(253, 255, 252));
         daftar.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
             public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
                 daftarValueChanged(evt);
@@ -87,13 +88,15 @@ public class tarif extends javax.swing.JInternalFrame {
         jLabel2.setText("Informasi");
 
         jLabel3.setFont(new java.awt.Font("Poppins Light", 0, 14)); // NOI18N
-        jLabel3.setText("Tarif 1x24 Jam");
+        jLabel3.setText("Tarif Normal");
 
-        awal.setFont(new java.awt.Font("Poppins Light", 0, 14)); // NOI18N
+        normal.setBackground(new java.awt.Color(253, 255, 252));
+        normal.setFont(new java.awt.Font("Poppins Light", 0, 14)); // NOI18N
 
         jLabel8.setFont(new java.awt.Font("Poppins Light", 0, 14)); // NOI18N
         jLabel8.setText("Jenis");
 
+        jenis.setBackground(new java.awt.Color(253, 255, 252));
         jenis.setFont(new java.awt.Font("Poppins Light", 0, 14)); // NOI18N
 
         save.setBackground(new java.awt.Color(164, 222, 2));
@@ -124,21 +127,26 @@ public class tarif extends javax.swing.JInternalFrame {
         jLabel7.setText("Daftar");
 
         jenis_id.setEditable(false);
+        jenis_id.setBackground(new java.awt.Color(253, 255, 252));
         jenis_id.setFont(new java.awt.Font("Poppins Light", 0, 14)); // NOI18N
+        jenis_id.setFocusable(false);
+        jenis_id.setRequestFocusEnabled(false);
 
         jLabel10.setFont(new java.awt.Font("Poppins Light", 0, 14)); // NOI18N
         jLabel10.setText("ID");
 
-        jLabel12.setFont(new java.awt.Font("Poppins Light", 0, 14)); // NOI18N
-        jLabel12.setText("Jenis");
-
-        jenis_nama.setEditable(false);
-        jenis_nama.setFont(new java.awt.Font("Poppins Light", 0, 14)); // NOI18N
-
+        perjam.setBackground(new java.awt.Color(253, 255, 252));
         perjam.setFont(new java.awt.Font("Poppins Light", 0, 14)); // NOI18N
 
         jLabel4.setFont(new java.awt.Font("Poppins Light", 0, 14)); // NOI18N
         jLabel4.setText("Tarif Per Jam");
+
+        waktu.setFont(new java.awt.Font("Poppins Light", 0, 14)); // NOI18N
+        waktu.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1 jam", "2 jam", "3 jam", "4 jam", "5 jam", "6 jam", "7 jam", "8 jam", "9 jam", "10 jam", "11 jam", "12 jam", "13 jam", "14 jam", "15 jam", "16 jam", "17 jam", "18 jam", "19 jam", "20 jam", "21 jam", "22 jam", "23 jam", "24 jam" }));
+        waktu.setSelectedIndex(-1);
+
+        jLabel9.setFont(new java.awt.Font("Poppins Light", 0, 14)); // NOI18N
+        jLabel9.setText("Waktu Normal");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -152,13 +160,9 @@ public class tarif extends javax.swing.JInternalFrame {
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel12)
-                                .addComponent(jLabel10))
+                            .addComponent(jLabel10)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jenis_id, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)
-                                .addComponent(jenis_nama)))))
+                            .addComponent(jenis_id, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(33, 33, 33)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
@@ -170,16 +174,26 @@ public class tarif extends javax.swing.JInternalFrame {
                             .addGap(18, 18, 18)
                             .addComponent(delete))
                         .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel8)
-                                .addComponent(jLabel3))
-                            .addGap(20, 20, 20)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(awal, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jenis, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(perjam, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(jLabel9)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(waktu, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                            .addComponent(jLabel3)
+                                            .addGap(31, 31, 31))
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                            .addComponent(jLabel8)
+                                            .addGap(79, 79, 79)))
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(normal, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
+                                        .addComponent(jenis, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
+                                        .addComponent(perjam, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE))))
+                            .addGap(1, 1, 1)))
                     .addComponent(jLabel4))
-                .addContainerGap(52, Short.MAX_VALUE))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -192,23 +206,23 @@ public class tarif extends javax.swing.JInternalFrame {
                     .addComponent(jLabel7))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jenis_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel10))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jenis_nama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel12)))
+                            .addComponent(jLabel10)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel8)
                             .addComponent(jenis, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(awal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel9)
+                            .addComponent(waktu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(normal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel3))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -219,7 +233,7 @@ public class tarif extends javax.swing.JInternalFrame {
                             .addComponent(save)
                             .addComponent(delete)
                             .addComponent(edit))))
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(91, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -239,25 +253,25 @@ public class tarif extends javax.swing.JInternalFrame {
     private void daftarValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_daftarValueChanged
         try {
             jenis_id.setText(daftar_id.get(daftar.getSelectedIndex()));
-            jenis_nama.setText(daftar.getSelectedValue());
             ResultSet data = data_adapter.GetTarif(Integer.parseInt(jenis_id.getText()));
             
             if (data.next()) {
                 jenis.setText(data.getString("jenis"));
-                awal.setText(data.getString("hari_pertama"));
-                perjam.setText(data.getString("per_jam"));
+                waktu.setSelectedIndex(data.getInt("waktu_normal") - 1);
+                normal.setText(data.getString("biaya_normal"));
+                perjam.setText(data.getString("biaya_perjam"));
             }
         } catch (Exception e) {}
     }//GEN-LAST:event_daftarValueChanged
 
     private void saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveActionPerformed
-        if (jenis.getText().isEmpty() || awal.getText().isEmpty() || perjam.getText().isEmpty()) {
+        if (jenis.getText().isEmpty() || waktu.getSelectedIndex() < 0 || normal.getText().isEmpty() || perjam.getText().isEmpty()) {
             JOptionPane.showMessageDialog(this, "Masih ada data yang kosong!", "Peringatan", JOptionPane.WARNING_MESSAGE);
             return;
         }
         
         try {
-            data_adapter.AddTarif(jenis.getText(), Integer.parseInt(awal.getText()), Integer.parseInt(perjam.getText()));
+            data_adapter.AddTarif(jenis.getText(), waktu.getSelectedIndex() + 1, Integer.parseInt(normal.getText()), Integer.parseInt(perjam.getText()));
             JOptionPane.showMessageDialog(this, "Berhasil membuat tarif baru", "Tambah Tarif", JOptionPane.INFORMATION_MESSAGE);
             Refresh();
         } catch (Exception e) {
@@ -286,13 +300,13 @@ public class tarif extends javax.swing.JInternalFrame {
             return;
         }
         
-        if (jenis.getText().isEmpty() || awal.getText().isEmpty() || perjam.getText().isEmpty()) {
+        if (jenis.getText().isEmpty() || waktu.getSelectedIndex() < 0 || normal.getText().isEmpty() || perjam.getText().isEmpty()) {
             JOptionPane.showMessageDialog(this, "Masih ada data yang kosong!", "Peringatan", JOptionPane.WARNING_MESSAGE);
             return;
         }
         
         try {
-            data_adapter.UpTarif(jenis.getText(), Integer.parseInt(awal.getText()), Integer.parseInt(perjam.getText()), Integer.parseInt(jenis_id.getText()));
+            data_adapter.UpTarif(jenis.getText(), waktu.getSelectedIndex() + 1, Integer.parseInt(normal.getText()), Integer.parseInt(perjam.getText()), Integer.parseInt(jenis_id.getText()));
             JOptionPane.showMessageDialog(this, "Berhasil memperbaharui tarif", "Edit Tarif", JOptionPane.INFORMATION_MESSAGE);
             Refresh();
         } catch (Exception e) {
@@ -313,31 +327,31 @@ public class tarif extends javax.swing.JInternalFrame {
         daftar.setModel(isi);
         
         jenis.setText("");
-        awal.setText("");
+        waktu.setSelectedIndex(-1);
+        normal.setText("");
         perjam.setText("");
         jenis_id.setText("");
-        jenis_nama.setText("");
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField awal;
     private javax.swing.JList<String> daftar;
     private javax.swing.JButton delete;
     private javax.swing.JButton edit;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jenis;
     private javax.swing.JTextField jenis_id;
-    private javax.swing.JTextField jenis_nama;
+    private javax.swing.JTextField normal;
     private javax.swing.JTextField perjam;
     private javax.swing.JButton save;
+    private javax.swing.JComboBox<String> waktu;
     // End of variables declaration//GEN-END:variables
 }
