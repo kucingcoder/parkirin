@@ -244,6 +244,7 @@ public class setup extends javax.swing.JInternalFrame {
             pengaturan.simpan(penyedia.getText(), alamat.getText(), gedung.getText(), perhatian.getText(), server.getText(), port.getText(), db.getText(), user.getText(), pass.getText());
             data_adapter.MuatPengaturan();
             JOptionPane.showMessageDialog(this, "Berhasil Menyimpan Pengaturan", "Sukses", JOptionPane.INFORMATION_MESSAGE);
+            main.auth();
             this.dispose();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, e.getMessage(), "Gagal", JOptionPane.ERROR_MESSAGE);
