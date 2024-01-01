@@ -204,4 +204,10 @@ public class data_adapter {
         rs = database.AmbilData("SELECT * FROM pemarkiran WHERE nopol = '" + nopol + "' ORDER BY no DESC");
         return rs;
     }
+    
+    public static ResultSet AnalisaPanel () throws Exception {
+        ResultSet rs;
+        rs = database.AmbilData("SELECT COUNT(DISTINCT no) AS kendaraan, COUNT(CASE WHEN status = 'Bayar Denda' THEN 1 END) AS tiket_hilang, SUM(total_biaya) AS pemasukan FROM pemarkiran WHERE DATE(masuk) = DATE(NOW()) OR DATE(keluar) = DATE(NOW())");
+        return rs;
+    }
 }
