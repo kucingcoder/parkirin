@@ -3,6 +3,8 @@ import com.formdev.flatlaf.FlatClientProperties;
 import com.m.ibrahimhanif.Controller.data_adapter;
 import java.awt.Font;
 import java.sql.ResultSet;
+import java.text.NumberFormat;
+import java.util.Locale;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
@@ -10,6 +12,8 @@ import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 
 public class riwayat extends javax.swing.JInternalFrame {
+    NumberFormat formatRupiah = NumberFormat.getCurrencyInstance(new Locale("id", "ID"));
+    
     public riwayat() {
         initComponents();
         try {
@@ -184,7 +188,7 @@ public class riwayat extends javax.swing.JInternalFrame {
             model.setNumRows(0);
 
             while (data.next()) {
-                model.addRow(new Object[]{data.getInt("no"), data.getString("nopol"), data.getString("jenis"), data.getString("masuk"), data.getString("keluar"), data.getString("status"), data.getString("total_biaya"), data.getString("pegawai")});
+                model.addRow(new Object[]{data.getInt("no"), data.getString("nopol"), data.getString("jenis"), data.getString("masuk"), data.getString("keluar"), data.getString("status"), formatRupiah.format(data.getInt("total_biaya")), data.getString("pegawai")});
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, e.getMessage(), "Sistem Gagal", JOptionPane.ERROR_MESSAGE);
@@ -205,7 +209,7 @@ public class riwayat extends javax.swing.JInternalFrame {
         model.setNumRows(0);
         
         while (data.next()) {
-            model.addRow(new Object[]{data.getInt("no"), data.getString("nopol"), data.getString("jenis"), data.getString("masuk"), data.getString("keluar"), data.getString("status"), data.getString("total_biaya"), data.getString("pegawai")});
+            model.addRow(new Object[]{data.getInt("no"), data.getString("nopol"), data.getString("jenis"), data.getString("masuk"), data.getString("keluar"), data.getString("status"), formatRupiah.format(data.getInt("total_biaya")), data.getString("pegawai")});
         }
     }
     

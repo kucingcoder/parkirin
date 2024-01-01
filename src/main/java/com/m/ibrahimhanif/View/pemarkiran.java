@@ -4,7 +4,9 @@ import com.m.ibrahimhanif.Controller.data_adapter;
 import java.awt.Font;
 import java.awt.event.KeyEvent;
 import java.sql.ResultSet;
+import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.Locale;
 import javax.print.PrintService;
 import javax.print.PrintServiceLookup;
 import javax.swing.JLabel;
@@ -15,6 +17,7 @@ import javax.swing.table.DefaultTableModel;
 
 public class pemarkiran extends javax.swing.JInternalFrame {
     ArrayList<Integer> daftar_id;
+    NumberFormat formatRupiah = NumberFormat.getCurrencyInstance(new Locale("id", "ID"));
     
     public pemarkiran() {
         initComponents();
@@ -629,7 +632,7 @@ public class pemarkiran extends javax.swing.JInternalFrame {
     private void nopol_tanpa_tiketKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nopol_tanpa_tiketKeyPressed
         if(evt.getKeyCode() == KeyEvent.VK_ENTER && !nopol_tanpa_tiket.getText().isEmpty()) {
             try {
-                denda.setText(String.valueOf(data_adapter.GetDenda(nopol_tanpa_tiket.getText())));
+                denda.setText(formatRupiah.format(data_adapter.GetDenda(nopol_tanpa_tiket.getText())));
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(this, e.getMessage(), "Sistem Gagal", JOptionPane.ERROR_MESSAGE);
             }
@@ -643,7 +646,7 @@ public class pemarkiran extends javax.swing.JInternalFrame {
     private void noKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_noKeyPressed
         if(evt.getKeyCode() == KeyEvent.VK_ENTER && !no.getText().isEmpty()) {
             try {
-                biaya.setText(String.valueOf(data_adapter.GetBiaya(Integer.parseInt(no.getText()))));
+                biaya.setText(formatRupiah.format(data_adapter.GetBiaya(Integer.parseInt(no.getText()))));
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(this, e.getMessage(), "Sistem Gagal", JOptionPane.ERROR_MESSAGE);
             }
@@ -664,7 +667,7 @@ public class pemarkiran extends javax.swing.JInternalFrame {
         modelbaru.setNumRows(0);
         
         while (keluarin.next()) {
-            modelbaru.addRow(new Object[]{keluarin.getString("tanggal"), keluarin.getString("waktu"), keluarin.getInt("no"), keluarin.getString("nopol"), keluarin.getString("jenis"), keluarin.getString("status"), keluarin.getString("total_biaya"), keluarin.getString("pegawai")});
+            modelbaru.addRow(new Object[]{keluarin.getString("tanggal"), keluarin.getString("waktu"), keluarin.getInt("no"), keluarin.getString("nopol"), keluarin.getString("jenis"), keluarin.getString("status"), formatRupiah.format(keluarin.getInt("total_biaya")), keluarin.getString("pegawai")});
         }
     }
     
