@@ -1,12 +1,14 @@
 package com.m.ibrahimhanif.View;
-import com.github.sarxos.webcam.Webcam;
 import com.m.ibrahimhanif.Controller.data_adapter;
 import java.awt.Font;
 import java.awt.event.KeyEvent;
+import java.awt.print.PrinterJob;
 import java.sql.ResultSet;
 import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Locale;
+import java.util.Map;
 import javax.print.PrintService;
 import javax.print.PrintServiceLookup;
 import javax.swing.JLabel;
@@ -14,10 +16,20 @@ import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
+import net.sf.jasperreports.engine.JREmptyDataSource;
+import net.sf.jasperreports.engine.JRExporterParameter;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.export.JRPrintServiceExporter;
+import net.sf.jasperreports.engine.export.JRPrintServiceExporterParameter;
+import net.sf.jasperreports.engine.util.JRLoader;
 
 public class pemarkiran extends javax.swing.JInternalFrame {
     ArrayList<Integer> daftar_id;
     NumberFormat formatRupiah = NumberFormat.getCurrencyInstance(new Locale("id", "ID"));
+    boolean siap = false;
     
     public pemarkiran() {
         initComponents();
@@ -35,8 +47,6 @@ public class pemarkiran extends javax.swing.JInternalFrame {
             ukuran_printer.add(b);
             ukuran_printer.add(c);
             ukuran_printer.add(d);
-            
-            for (Webcam webcam : Webcam.getWebcams()) { kamera.addItem(webcam.getName()); }
             
             PrintService[] printServices = PrintServiceLookup.lookupPrintServices(null, null);
             
@@ -69,7 +79,6 @@ public class pemarkiran extends javax.swing.JInternalFrame {
             riwayat_masuk.getColumnModel().getColumn(3).setCellRenderer(centerRenderer);
             riwayat_masuk.getColumnModel().getColumn(4).setCellRenderer(centerRenderer);
             riwayat_masuk.getColumnModel().getColumn(5).setCellRenderer(centerRenderer);
-            
             riwayat_keluar.getColumnModel().getColumn(0).setCellRenderer(centerRenderer);
             riwayat_keluar.getColumnModel().getColumn(1).setCellRenderer(centerRenderer);
             riwayat_keluar.getColumnModel().getColumn(2).setCellRenderer(centerRenderer);
@@ -80,6 +89,8 @@ public class pemarkiran extends javax.swing.JInternalFrame {
             riwayat_keluar.getColumnModel().getColumn(7).setCellRenderer(centerRenderer);
             
             refresh();
+            
+            siap = true;
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, e.getMessage(), "Sistem Gagal", JOptionPane.ERROR_MESSAGE);
         }
@@ -262,6 +273,11 @@ public class pemarkiran extends javax.swing.JInternalFrame {
         kamera.setBackground(new java.awt.Color(253, 255, 252));
         kamera.setFont(new java.awt.Font("Poppins Light", 0, 14)); // NOI18N
         kamera.setToolTipText("");
+        kamera.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                kameraItemStateChanged(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -586,6 +602,38 @@ public class pemarkiran extends javax.swing.JInternalFrame {
         
         try {
             data_adapter.KendaraanMasuk(nopol.getText(), daftar_id.get(jenis_kendaraan.getSelectedIndex()));    
+            
+            String jrxmlFile = "", jasperFile = "";
+            
+            if (a.isSelected()) {
+                jrxmlFile = "karcis/57.jrxml";
+                jasperFile = "karcis/57.jasper";
+            } else if (b.isSelected()) {
+                jrxmlFile = "karcis/58.jrxml";
+                jasperFile = "karcis/58.jasper";
+            } if (c.isSelected()) {
+                jrxmlFile = "karcis/75.jrxml";
+                jasperFile = "karcis/75.jasper";
+            } if (d.isSelected()) {
+                jrxmlFile = "karcis/80.jrxml";
+                jasperFile = "karcis/80.jasper";
+            }
+            
+            JasperCompileManager.compileReportToFile(jrxmlFile, jasperFile);
+            JasperReport jasperReport = (JasperReport) JRLoader.loadObjectFromFile(jasperFile);
+
+            Map<String, Object> parameters = new HashMap<>();
+            parameters.put("penyedia", data_adapter.settingan.getNamaPenyedia() + "\n" + data_adapter.settingan.getNamaGedung());
+            parameters.put("alamat", data_adapter.settingan.getAlamat());
+            parameters.put("no", data_adapter.Getkarcis(nopol.getText()));
+            parameters.put("perhatian", data_adapter.settingan.getPerhatian());
+            
+            System.out.println(data_adapter.Getkarcis(nopol.getText()));
+            
+            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, new JREmptyDataSource());
+            PrintService printService = getPrintService(printer.getSelectedItem().toString());
+            printJasperPrint(jasperPrint, printService);
+            
             JOptionPane.showMessageDialog(this, "Berhasil mencatat kendaraan", "Parkir Masuk", JOptionPane.INFORMATION_MESSAGE);
             nopol.setText("");
             jenis_kendaraan.setSelectedIndex(-1);
@@ -632,7 +680,7 @@ public class pemarkiran extends javax.swing.JInternalFrame {
     private void nopol_tanpa_tiketKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nopol_tanpa_tiketKeyPressed
         if(evt.getKeyCode() == KeyEvent.VK_ENTER && !nopol_tanpa_tiket.getText().isEmpty()) {
             try {
-                denda.setText(formatRupiah.format(data_adapter.GetDenda(nopol_tanpa_tiket.getText())));
+                denda.setText(Integer.toString(data_adapter.GetDenda(nopol_tanpa_tiket.getText())));
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(this, e.getMessage(), "Sistem Gagal", JOptionPane.ERROR_MESSAGE);
             }
@@ -640,18 +688,24 @@ public class pemarkiran extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_nopol_tanpa_tiketKeyPressed
 
     private void deteksiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deteksiActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_deteksiActionPerformed
 
     private void noKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_noKeyPressed
         if(evt.getKeyCode() == KeyEvent.VK_ENTER && !no.getText().isEmpty()) {
             try {
-                biaya.setText(formatRupiah.format(data_adapter.GetBiaya(Integer.parseInt(no.getText()))));
+                biaya.setText(Integer.toString(data_adapter.GetBiaya(Integer.parseInt(no.getText()))));
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(this, e.getMessage(), "Sistem Gagal", JOptionPane.ERROR_MESSAGE);
             }
         }
     }//GEN-LAST:event_noKeyPressed
+
+    private void kameraItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_kameraItemStateChanged
+        if (siap) {
+            
+        }
+    }//GEN-LAST:event_kameraItemStateChanged
 
     private void refresh() throws Exception{
         ResultSet masukin = data_adapter.GetKendaraanMasuk();
@@ -669,6 +723,31 @@ public class pemarkiran extends javax.swing.JInternalFrame {
         while (keluarin.next()) {
             modelbaru.addRow(new Object[]{keluarin.getString("tanggal"), keluarin.getString("waktu"), keluarin.getInt("no"), keluarin.getString("nopol"), keluarin.getString("jenis"), keluarin.getString("status"), formatRupiah.format(keluarin.getInt("total_biaya")), keluarin.getString("pegawai")});
         }
+    }
+    
+    private static PrintService getPrintService(String printerName) {
+        PrintService[] printServices = PrintServiceLookup.lookupPrintServices(null, null);
+
+        for (PrintService printService : printServices) {
+            if (printService.getName().equals(printerName)) {
+                return printService;
+            }
+        }
+
+        throw new IllegalArgumentException("Printer " + printerName + " tidak ditemukan");
+    }
+
+    private static void printJasperPrint(JasperPrint jasperPrint, PrintService printService) throws Exception {
+        PrinterJob printerJob = PrinterJob.getPrinterJob();
+        printerJob.setPrintService(printService);
+
+        JRPrintServiceExporter exporter = new JRPrintServiceExporter();
+        exporter.setParameter(JRExporterParameter.JASPER_PRINT, jasperPrint);
+        exporter.setParameter(JRPrintServiceExporterParameter.PRINT_SERVICE, printService);
+        exporter.setParameter(JRPrintServiceExporterParameter.DISPLAY_PAGE_DIALOG, Boolean.FALSE);
+        exporter.setParameter(JRPrintServiceExporterParameter.DISPLAY_PRINT_DIALOG, Boolean.FALSE);
+
+        exporter.exportReport();
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables

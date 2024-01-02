@@ -169,6 +169,17 @@ public class data_adapter {
         return rs;
     }
     
+    public static String Getkarcis (String nopol) throws Exception {
+        ResultSet rs;
+        rs = database.AmbilData("SELECT no FROM pemarkiran WHERE nopol = '" + nopol + "' ORDER BY no DESC LIMIT 1");
+        
+        if (rs.next()) {
+            return rs.getString("no");
+        }
+        
+        return "";
+    }
+    
     public static ResultSet GetKendaraanKeluar () throws Exception {
         ResultSet rs;
         rs = database.AmbilData("SELECT DATE_FORMAT(keluar, '%d-%m-%Y') AS 'tanggal', TIME_FORMAT(keluar, '%H:%i') AS 'waktu', no, nopol, jenis, status, total_biaya, pegawai FROM pemarkiran WHERE status IS NOT NULL ORDER BY no DESC LIMIT 20");

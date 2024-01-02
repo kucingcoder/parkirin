@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.6.final using JasperReports Library version 6.20.6-5c96b6aa8a39ac1dc6b6bea4b81168e16dd39231  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="75" pageWidth="212" pageHeight="212" columnWidth="212" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="d76e0a65-d912-473b-ba65-9b5ae4377e36">
+	<property name="com.jaspersoft.studio.unit." value="mm"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="mm"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="mm"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="mm"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="mm"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="mm"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="mm"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="mm"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="mm"/>
+	<parameter name="penyedia" class="java.lang.String"/>
+	<parameter name="alamat" class="java.lang.String"/>
+	<parameter name="no" class="java.lang.String"/>
+	<parameter name="perhatian" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<title>
+		<band height="45">
+			<textField>
+				<reportElement x="10" y="7" width="170" height="38" uuid="7f3866d2-0e14-44b6-999d-27d386127111"/>
+				<box>
+					<pen lineWidth="2.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Poppins ExtraBold" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{penyedia}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="32">
+			<textField>
+				<reportElement x="10" y="0" width="170" height="32" uuid="6e33ed14-d69b-4ed9-85f0-97bd04f6c9e4"/>
+				<box padding="4">
+					<pen lineWidth="2.0"/>
+					<topPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Poppins Light" size="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{alamat}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="97">
+			<textField>
+				<reportElement x="10" y="0" width="170" height="97" uuid="508617ea-7a8f-463c-a2a2-aa693bcf9d13"/>
+				<box>
+					<pen lineWidth="2.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Poppins ExtraBold" size="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{no}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<pageFooter>
+		<band height="38">
+			<textField>
+				<reportElement x="10" y="0" width="170" height="30" uuid="0eda98b3-2051-4b09-b491-41c409cce103"/>
+				<box padding="4">
+					<pen lineWidth="2.0"/>
+					<topPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Poppins Light" size="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{perhatian}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>
