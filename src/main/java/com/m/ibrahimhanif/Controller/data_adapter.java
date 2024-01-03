@@ -66,7 +66,7 @@ public class data_adapter {
     }
     
     public static void UpAkun (String id, String sandi, String nama, String j_kelamin, String no_telp, String alamat, String level, String uuid) throws Exception {
-        database.SetData("UPDATE pegawai SET id = '" + id + "', sandi = MD5('" + sandi + "'), nama = '" + nama + "', gender = '" + j_kelamin + "', telp = '" + no_telp + "', alamat = '" + alamat + "' WHERE uuid = '" + uuid + "'");
+        database.SetData("UPDATE pegawai SET id = '" + id + "', sandi = MD5('" + sandi + "'), nama = '" + nama + "', gender = '" + j_kelamin + "', telp = '" + no_telp + "', alamat = '" + alamat + "', level = '" + level +"' WHERE uuid = '" + uuid + "'");
     }
     
     public static void DelAkun (String uuid) throws Exception {
